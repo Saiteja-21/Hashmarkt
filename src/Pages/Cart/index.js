@@ -3,6 +3,7 @@ import { ShoppingCartIcon, TrashIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
 import styles from "./styles.module.css";
+import Card from '../../Components/Card';
 
 const Cart = () => {
   const { items, removeFromCart } = useCart();
@@ -37,6 +38,16 @@ const Cart = () => {
           </div>
         </div>
       )}
+      {
+        items.length>0 && (
+          items.map((item)=>{
+            return(  <Card item={item}/>)
+          
+          })
+        )
+      }
+    
+
       // Your code goes here
     </div>
   );

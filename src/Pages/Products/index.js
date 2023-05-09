@@ -14,6 +14,7 @@ const Products = () => {
   const { productList, loading, setProductID, setCategory } = useProduct();
   
   const {category_id} = useParams()
+  console.log('product');
 
   useEffect(() => {
     setCategory(category_id)
@@ -21,13 +22,27 @@ const Products = () => {
 
   return (
     <div className={styles.cardGroup}>
-      {/* {!loading ? ( */}
+      {!loading ? (
+        productList.map((product)=>{
+          const findCartItem= items.find((item)=>item.id===product.id);
+          const findFavoriteItem=favoriteItems.find((item)=>item.id===product.id)
+         
+          return (
+            <Card findCartItem={Boolean(findCartItem)} item={product} findFavoriteItem={Boolean(findFavoriteItem)} />
+
+            
+          )
+         
+         
+
+
+        })
           /**
            * Your code goes here
            */
-      {/* ) : (
+       ) : (
         <Spinner />
-      )} */}
+      )} 
     </div>
   );
 };

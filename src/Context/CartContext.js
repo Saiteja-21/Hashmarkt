@@ -1,10 +1,7 @@
 import { useState, createContext, useContext, useEffect } from 'react'
-
 const CartContext = createContext()
-
 const defaultCart = JSON.parse(localStorage.getItem('cart')) || []
-
-const CartProvider = ({children}) => {
+const CartProvider = ({children}) => { 
 
   /**
    * 1. Create a state variable called items and a function to update it called setItems that is initialized to the defaultCart
@@ -20,10 +17,32 @@ const CartProvider = ({children}) => {
    * 11. Create a variable called values that will hold an object with the items, setItems, addToCart, and removeFromCart functions
    * 12. Return the CartContext.Provider and pass in the values variable
    */
+  const [items,setItems] = useState(defaultCart);
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(items));
+  },[items]);
+  const addToCart = (data, findCartItem) => {
+    if(!findCartItem){
+      return setItems((items) => [data, ...items]);
+    }else{
+      console.log(data)
+      const filtered = items.filter((item) => item.id !== data.id);
+      return setItems(filtered);
+    }
+  }
+  console.log('123')
 
-  return <CartContext.Provider >{children}</CartContext.Provider>
+  // const removeFromCart = (item_id) => {
+  //   const filtered = items.filter((elem) => elem.id !== item_id);
+  //   setItems(filtered);
+  // }
+  const values = {
+    items,
+    setItems,
+    addToCart,
+   
+  }
+  return <CartContext.Provider value={values}>{children}</CartContext.Provider>
 }
-
 const useCart = () => useContext(CartContext)
-
 export { CartProvider, useCart }

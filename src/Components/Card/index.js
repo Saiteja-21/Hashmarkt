@@ -1,15 +1,24 @@
 import styles from './styles.module.css'
 import { StarIcon, ShoppingCartIcon, HeartIcon } from '@heroicons/react/solid'
+import { useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../Context/CartContext'
+import { useFavorite } from '../../Context/FavoriteContext'
+
 
 const Card = ({
   item,
-  addToFavorite,
+  
+ 
   findFavoriteItem,
-  addToCart,
   findCartItem,
+  
+  
 }) => {
-
+ console.log('card')
+ const {addToCart}=useCart();  
+ const {addToFavorite}=useFavorite();
+ 
   return (
     <div key={`${item.id}-item`} className={styles.card} title={item.title}>
       <div className={styles.cardLink}>
