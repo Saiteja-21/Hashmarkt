@@ -2,7 +2,8 @@ import { IdentificationIcon } from '@heroicons/react/outline'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../Context/AuthContext'
-import validations from './validations'
+import validations from './validations';
+import style from './Signup.module.css'
 
 const Signup = () => {
   const {
@@ -34,8 +35,9 @@ const Signup = () => {
   }
 
   return (
-    <div >
-      <div >
+    <div className={style.main1} >
+      <div className={style.main2} >
+        <div className={style.card}>
         <div>
           <h2 >Sign Up</h2>
         </div>
@@ -46,7 +48,7 @@ const Signup = () => {
           <div >
             <div>
             {errors.firstName && <span>{errors.firstName}</span>}
-              <label >First Name</label>
+              
               <input
                 type="text"
                 onChange={handleSignUpFormChange}
@@ -59,7 +61,7 @@ const Signup = () => {
 
             <div>
             {errors.lastName && <span>{errors.lastName}</span>}
-              <label>Last Name</label>
+              
               <input
                 type="text"
                 onChange={handleSignUpFormChange}
@@ -71,7 +73,7 @@ const Signup = () => {
             </div>
             <div>
             {errors.email && <span >{errors.email}</span>}
-              <label>Email</label>
+             
               <input
                 type="email"
                 onChange={handleSignUpFormChange}
@@ -83,7 +85,7 @@ const Signup = () => {
             </div>
             <div>
             {errors.password && <span >{errors.password}</span>}
-              <label >Password</label>
+              
               <input
                 type="Password"
                 onChange={handleSignUpFormChange}
@@ -95,7 +97,7 @@ const Signup = () => {
             </div>
             <div>
             {errors.passwordConfirm && <span>{errors.passwordConfirm}</span>}
-              <label >Password Confirm</label>
+             
               <input
                 type="Password"
                 onChange={handleSignUpFormChange}
@@ -106,8 +108,8 @@ const Signup = () => {
               
             </div>
             <div >
-              <div >
-                <span>
+              <div className={style.sp}>
+                <span >
                   Already have an account? Login{" "}
                   <Link to="/signin" >
                     {" "}
@@ -117,8 +119,8 @@ const Signup = () => {
               </div>
             </div>
             <div >
-              <button type="submit" >
-                <IdentificationIcon
+              <button type="submit" className={style.button} >
+                <IdentificationIcon className={style.signup}
                   aria1-hidden="true"
                 />
                 Sign Up
@@ -126,6 +128,7 @@ const Signup = () => {
             </div>
           </div>
         </form>
+        </div>
       </div>
     </div>
   )

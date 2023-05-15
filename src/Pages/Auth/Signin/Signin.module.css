@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+}
+.main1{
+    display: flex;
+    justify-content: center;
+}
+.main2{
+    border: 3px solid yellow;
+    position: relative;
+    width:450px;
+    height:400px;
+   
+   margin-top: 60px;
+   padding: 50px;
+   
+}
+.card{
+    position: absolute;
+    height: 200px;
+    width:300px;
+   
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    padding-right: 40px;
+    margin-top: 30px;
+
+   
+    
+   
+}
+.h{
+    font-size:48px;
+   margin-left: 48px;
+}
+form{
+    margin-left: 50px;
+}
+input{
+    margin-top: 18px;
+    height: 38px;
+    width: 300px;
+    border-radius: 6px;
+}
+.sp{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 12px;
+    
+}
+.button{
+    display: flex;
+    margin-left: 3px;
+    background-color:rgb(250,201,21);
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 38px;
+}
+.signin{
+    height:38px
+}

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../Context/AuthContext'
 import { LoginIcon } from '@heroicons/react/outline'
+import style from './Signin.module.css'
 
 const Signin = () => {
 
@@ -31,18 +32,20 @@ const Signin = () => {
   }, [loggedIn])
 
   return (
-    <div>
-      <div>
+    <div className={style.main1}>
+      <div className={style.main2}>
+        <div className={style.card}>
         <div>
-          <h2>Login</h2>
+          <h1 className={style.h}>Login</h1>
         </div>
+        <div>
         <form
           autoComplete="off"
           onSubmit={handleSignIn}
         >
           <div>
             <div>
-              <label>Email</label>
+              
               <input
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -53,7 +56,7 @@ const Signin = () => {
               />
             </div>
             <div>
-              <label>Password</label>
+              
               <input
                 type="Password"
                 onChange={(e) => setPassword(e.target.value)}
@@ -65,23 +68,31 @@ const Signin = () => {
             </div>
             <div>
               <div>
+              <div className={style.sp}>
                 <span>
+                 
                   Don't have an account? Sign up{" "}
+                 
+                 
                   <Link to="/signup">
                     {" "}
                     here.
                   </Link>
+                  
                 </span>
+                </div>
               </div>
             </div>
-            <div>
-              <button type="submit">
-                <LoginIcon aria1-hidden="true" />
+            <div >
+              <button type="submit" className={style.button}>
+                <LoginIcon aria1-hidden="true" className={style.signin} />
                 Login
               </button>
             </div>
           </div>
         </form>
+        </div>
+        </div>
       </div>
     </div>
   )
