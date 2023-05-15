@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Hashmarkt/static/css/main.6180db0a.css",
+    "main.js": "/Hashmarkt/static/js/main.96d07bf1.js",
+    "index.html": "/Hashmarkt/index.html",
+    "main.6180db0a.css.map": "/Hashmarkt/static/css/main.6180db0a.css.map",
+    "main.96d07bf1.js.map": "/Hashmarkt/static/js/main.96d07bf1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6180db0a.css",
+    "static/js/main.96d07bf1.js"
+  ]
+}
